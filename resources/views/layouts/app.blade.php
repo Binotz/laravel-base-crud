@@ -9,7 +9,7 @@
 </head>
 <body>
     <header>
-        Header
+        @include('components.navbar')
     </header>
 
     <main>
