@@ -1,0 +1,11 @@
+nav {
+    padding: 2rem 6rem;
+    ul {
+        list-style-type: none;
+        display: flex;
+        justify-content: space-between;
+        a {
+            text-decoration: none;
+        }
+    }
+}
