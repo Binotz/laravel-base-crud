@@ -42,7 +42,7 @@ h1 {
   gap: 2rem;
 }
 
-.cards a {
+.cards .link-card {
   width: calc(33.3333333333% - 2rem);
   text-decoration: none;
 }

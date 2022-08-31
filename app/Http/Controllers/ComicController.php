@@ -78,6 +78,11 @@ class ComicController extends Controller
     public function edit($id)
     {
         //
+        $comic_to_edit = Comic::findOrFail($id);
+        $data = [
+            'comic' => $comic_to_edit,
+        ];
+        return view('comics.edit', $data);
     }
 
     /**
@@ -89,7 +94,14 @@ class ComicController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        //controllo che i dati passati siano validi
+        $request->validate($this->GetValidationFields());
+        $form_data = $request->all();
+
+        $comic_to_edit = Comic::findOrFail($id);
+        $comic_to_edit->update($form_data);
+
+        return redirect()->route('comics.show', ['comic' => $id]);
     }
 
     /**
@@ -101,5 +113,21 @@ class ComicController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    /******************************************* */
+    // CUSTOM FUNCTIONS
+    /******************************************* */
+
+    protected function GetValidationFields(){
+        return [
+            'title' => 'required | max: 255',
+            'description' => 'required | max: 1000',
+            'thumb' => 'required | max: 1000',
+            'price' => 'required | numeric',
+            'series' => 'required | max: 50',
+            'sale_date' => 'required | date',
+            'type' => 'required | max: 50',
+        ];
     }
 }

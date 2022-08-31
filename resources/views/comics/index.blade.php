@@ -4,7 +4,7 @@
     <div class="container">
         <div class="cards">
             @foreach ($comics as $comic)
-                <a href="{{route('comics.show', 
+                <a class="link-card" href="{{route('comics.show', 
                                     ['comic' => $comic->id]
                                 )}}">
                     <div class="card">

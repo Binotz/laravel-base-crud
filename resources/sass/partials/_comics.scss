@@ -8,7 +8,7 @@ h1 {
     flex-wrap: wrap;
     gap: 2rem;
 
-    a {
+    .link-card {
         width: calc((100% / 3) - 2rem);
         text-decoration: none;
     }
