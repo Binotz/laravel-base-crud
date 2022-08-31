@@ -42,6 +42,7 @@ class ComicController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate($this->GetValidationFields() );
         //
         $form_data = $request->all();
         $temp_comic = new Comic();

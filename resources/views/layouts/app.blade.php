@@ -13,11 +13,13 @@
     </header>
 
     <main>
-        @yield('main-content')
+        <div class="container">
+            @yield('main-content')
+        </div>
     </main>
 
     <footer>
-        Footer
+        
     </footer>
 </body>
 </html>
