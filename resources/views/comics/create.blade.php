@@ -21,7 +21,7 @@
             <input type="text" id="series" name="series" >
 
             <label for="sale_date">In vendita dal: </label>
-            <input type="text" id="sale_date" name="sale_date" >
+            <input type="date" id="sale_date" name="sale_date" >
 
             <label for="type">Tipo: </label>
             <input type="text" id="type" name="type" >
